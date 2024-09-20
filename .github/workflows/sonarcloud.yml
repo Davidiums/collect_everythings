@@ -2,7 +2,8 @@ name: SonarCloud analysis
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "1-sonar-cloud-issus"]
+
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
