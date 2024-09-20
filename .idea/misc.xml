@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-microservices-main/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-microservices-main/job-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-microservices-main/auth-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-microservices-main/file-storage/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-microservices-main/user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-microservices-main/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-microservices-main/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-microservices-main/notification-service/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/test/pom.xml" />
+        <option value="$PROJECT_DIR$/authentificationService/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/test/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="corretto-22" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
