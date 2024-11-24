@@ -16,10 +16,19 @@
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/test/pom.xml" />
         <option value="$PROJECT_DIR$/authentificationService/pom.xml" />
+        <option value="$PROJECT_DIR$/brokerService/pom.xml" />
+        <option value="$PROJECT_DIR$/subscriptionService/pom.xml" />
+        <option value="$PROJECT_DIR$/clientService/pom.xml" />
+        <option value="$PROJECT_DIR$/paiementService/pom.xml" />
+        <option value="$PROJECT_DIR$/itemService/pom.xml" />
+        <option value="$PROJECT_DIR$/basketService/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/brokerService/pom.xml" />
+        <option value="$PROJECT_DIR$/clientService/pom.xml" />
+        <option value="$PROJECT_DIR$/common-rabbitmq-config/pom.xml" />
         <option value="$PROJECT_DIR$/test/pom.xml" />
       </set>
     </option>
