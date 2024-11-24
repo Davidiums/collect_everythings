@@ -1,23 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/common-rabbitmq-config/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="subscriptionService" />
+        <module name="authenticationService" />
+        <module name="itemService" />
+        <module name="paiementService" />
+        <module name="basketService" />
         <module name="gateway" />
-        <module name="authentificationService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="brokerService" target="17" />
+      <module name="clientService" target="17" />
+      <module name="common-rabbitmq-config" target="17" />
       <module name="test" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="authentificationService" options="-parameters" />
+      <module name="authenticationService" options="-parameters" />
+      <module name="basketService" options="-parameters" />
+      <module name="brokerService" options="-parameters" />
+      <module name="clientService" options="-parameters" />
+      <module name="common-rabbitmq-config" options="-parameters" />
       <module name="gateway" options="-parameters" />
+      <module name="itemService" options="-parameters" />
+      <module name="paiementService" options="-parameters" />
+      <module name="subscriptionService" options="-parameters" />
       <module name="test" options="-parameters" />
     </option>
   </component>
