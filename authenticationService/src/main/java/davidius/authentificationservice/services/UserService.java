@@ -21,6 +21,11 @@ public class UserService {
         return user.orElse(null);
     }
 
+    public User findByEmail(String email) {
+        Optional<User> user = userRepository.findByEmail(email);
+        return user.orElse(null);
+    }
+
     public boolean validatePassword(String rawPassword, String encodedPassword) {
         return new BCryptPasswordEncoder().matches(rawPassword, encodedPassword);
     }

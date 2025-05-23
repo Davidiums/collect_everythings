@@ -43,6 +43,16 @@ services:
     networks:
       - backend
 
+#  gateway:
+#    build: ./gateway
+#    container_name: gateway
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=dev
+#    deploy:
+#      replicas: 1
+
 volumes:
   db_data:
 

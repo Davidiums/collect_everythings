@@ -41,9 +41,4 @@ public class MyUserDetailsService implements UserDetailsService {
         return Collections.singleton(new SimpleGrantedAuthority("ROLE_" + user.getRole().getName()));
     }
 
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
-    }
-
 }

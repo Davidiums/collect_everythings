@@ -1,49 +1,35 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0    https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Si vous souhaitez hériter des configurations Spring Boot -->
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.4</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-
-    <!-- Identifiants du parent -->
     <groupId>Davidius</groupId>
     <artifactId>collect_everythings-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>collect_everythings-parent</name>
-    <description>Parent project for collect_everythings</description>
-
-    <!-- Liste des modules enfants -->
-    <modules>
-        <module>gateway</module>
-        <module>authenticationService</module>
-        <module>subscriptionService</module>
-        <module>itemService</module>
-        <module>paiementService</module>
-        <!-- Ajoutez d'autres modules ici -->
-    </modules>
-
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2023.0.3</spring-cloud.version>
-
-
+        <sonar.organization>davidiums</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
-    <!-- Gestion des dépendances communes -->
+    <modules>
+        <module>shared</module>
+        <module>authenticationService</module>
+        <module>gateway</module>
+        <!-- Ajoute les autres microservices ici -->
+    </modules>
+
     <dependencyManagement>
         <dependencies>
             <!-- Dépendances Spring Boot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>3.3.4</version>
+                <version>3.3.5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -56,53 +42,134 @@
                 <scope>import</scope>
             </dependency>
 
-
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
-        <!-- Dépendance AMQP pour RabbitMQ -->
+        <!-- Dépendances communes -->
+
+        <!-- Spring Boot Starter -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-envers</artifactId>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>3.4.1</version>
         </dependency>
-        <!-- lombok-->
+
+
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+        <!-- rabbit mq -->
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit</artifactId>
+        </dependency>
+
+        <!--        lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
-            <groupId>org.mariadb.jdbc</groupId>
-            <artifactId>mariadb-java-client</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>2.7.3</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.0.0-M5</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
-
     <build>
         <pluginManagement>
             <plugins>
-                <!-- Plugins communs -->
+                <!-- Plugin Spring Boot pour reconditionner l'application en WAR exécutable -->
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>3.4.1</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- Plugin Maven WAR pour générer le fichier WAR -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.3.2</version>
+                    <configuration>
+                        <!-- Empêche l'obligation d'avoir un fichier web.xml -->
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
+
+
+    <profiles>
+        <profile>
+            <id>poc</id>
+            <modules>
+                <module>gateway</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>full</id>
+            <modules>
+                <module>gateway</module>
+                <module>authenticationService</module>
+                <module>paiementService</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>minimal</id>
+            <modules>
+                <module>gateway</module>
+                <module>authenticationService</module>
+            </modules>
+        </profile>
+    </profiles>
 </project>

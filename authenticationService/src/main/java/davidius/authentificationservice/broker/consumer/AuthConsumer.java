@@ -21,7 +21,7 @@ public class AuthConsumer {
 
     @RabbitListener(queues = "authQueue")
     public AuthenticationResponse processAuthRequest(AuthenticationRequest request) {
-        System.out.println("Requête d'authentification reçue : " + request.getUsername());
+        System.out.println(" Rmq. Requête d'authentification reçue : " + request.getUsername());
         // Vérifier si l'utilisateur existe
         User user = userService.findByUsername(request.getUsername());
         if (user == null || !userService.validatePassword(request.getPassword(), user.getPassword())) {
@@ -30,7 +30,7 @@ public class AuthConsumer {
         }
 
         // Générer un JWT
-        String token = jwtUtils.generateToken(user.getUsername());
+        String token = jwtUtils.generateToken(user);
         System.out.println("Authentification réussie pour " + request.getUsername());
 
         return new AuthenticationResponse(true, "Authentification réussie", token);

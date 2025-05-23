@@ -1,11 +1,15 @@
 package davidius.authentificationservice.entities;
 
+import com.davidius.shared.EntityUtils.AuditableEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
+import org.hibernate.envers.Audited;
+
 
 @Getter
 @Entity
-public class User {
+@Audited
+public class User extends AuditableEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

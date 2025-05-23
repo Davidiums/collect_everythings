@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/authenticationService/authenticationService.iml" filepath="$PROJECT_DIR$/authenticationService/authenticationService.iml" />
       <module fileurl="file://$PROJECT_DIR$/collect_everythings-parent.iml" filepath="$PROJECT_DIR$/collect_everythings-parent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/itemService/itemService.iml" filepath="$PROJECT_DIR$/itemService/itemService.iml" />
     </modules>
   </component>
 </project>
