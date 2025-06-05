@@ -14,7 +14,6 @@
     <packaging>jar</packaging>
 
     <dependencies>
-        <!-- Si tu veux, tu peux ajouter Spring Web ici si tu utilises des Interceptor, etc. -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
@@ -23,7 +22,5 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-        <!-- Ajoute d'autres libs partagées ici si besoin -->
     </dependencies>
 </project>

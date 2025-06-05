@@ -14,8 +14,8 @@
         <module name="authenticationService" />
         <module name="itemService" />
         <module name="basketService" />
+        <module name="paymentService" />
         <module name="subscriptionService" />
-        <module name="paiementService" />
         <module name="gateway" />
       </profile>
     </annotationProcessing>
@@ -36,7 +36,7 @@
       <module name="common-rabbitmq-config" options="-parameters" />
       <module name="gateway" options="" />
       <module name="itemService" options="" />
-      <module name="paiementService" options="" />
+      <module name="paymentService" options="" />
       <module name="subscriptionService" options="" />
       <module name="test" options="-parameters" />
     </option>

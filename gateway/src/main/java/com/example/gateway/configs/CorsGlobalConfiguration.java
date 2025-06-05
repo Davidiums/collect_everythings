@@ -3,11 +3,14 @@ package com.example.gateway.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.reactive.CorsUtils;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilter;
@@ -19,6 +22,7 @@ import reactor.core.publisher.Mono;
 public class CorsGlobalConfiguration {
 
     @Bean
+    @Order(-9999)
     public WebFilter corsFilter() {
         return (ServerWebExchange exchange, WebFilterChain chain) -> {
             ServerHttpRequest request = exchange.getRequest();
@@ -36,5 +40,4 @@ public class CorsGlobalConfiguration {
             return chain.filter(exchange);
         };
     }
-
 }

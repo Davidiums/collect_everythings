@@ -9,7 +9,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
         com.davidius.shared.EntityUtils.AuditableEntity.class,
         com.davidius.shared.user.UserContext.class,
         com.davidius.shared.user.UserHeaderInterceptor.class,
-        com.davidius.shared.user.UserContextConfig.class
+        com.davidius.shared.user.UserContextConfig.class,
+        com.davidius.shared.security.SecurityContext.class,
+        com.davidius.shared.security.SecurityConfig.class,
+        com.davidius.shared.security.HeaderToSecurityContextFilter.class
+
 })
 @EnableJpaAuditing
 public class SubscriptionServiceApplication {

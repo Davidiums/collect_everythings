@@ -12,8 +12,8 @@ GRANT ALL PRIVILEGES ON auth_db.* TO 'auth_user'@'%';
 CREATE USER IF NOT EXISTS 'client_user'@'%' IDENTIFIED BY 'client_password';
 GRANT ALL PRIVILEGES ON client_db.* TO 'client_user'@'%';
 
-CREATE USER IF NOT EXISTS 'paiement_user'@'%' IDENTIFIED BY 'paiement_password';
-GRANT ALL PRIVILEGES ON paiement_db.* TO 'paiement_user'@'%';
+CREATE USER IF NOT EXISTS 'payment_user'@'%' IDENTIFIED BY 'payment_password';
+GRANT ALL PRIVILEGES ON paiement_db.* TO 'payment_user'@'%';
 
 CREATE USER IF NOT EXISTS 'subscription_user'@'%' IDENTIFIED BY 'subscription_password';
 GRANT ALL PRIVILEGES ON subscription_db.* TO 'subscription_user'@'%';

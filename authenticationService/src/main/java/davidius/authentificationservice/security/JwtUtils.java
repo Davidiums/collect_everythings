@@ -41,6 +41,8 @@ public class JwtUtils {
         }
 
         public String generateToken(User user) {
+            System.out.println("pute");
+
             Date now = new Date();
             Date expiryDate = new Date(now.getTime() + jwtExpirationInMs);
 

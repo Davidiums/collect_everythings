@@ -37,11 +37,14 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest
+      - RABBITMQ_DEFINITIONS_FILE=/etc/rabbitmq/rabbi-def.json
     ports:
       - "5672:5672"
       - "15672:15672"
     networks:
       - backend
+    volumes:
+      - ./rabbit-def.json:/etc/rabbitmq/definitions.json
 
 #  gateway:
 #    build: ./gateway

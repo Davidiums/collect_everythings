@@ -20,6 +20,7 @@
         <module>shared</module>
         <module>authenticationService</module>
         <module>gateway</module>
+        <module>paymentService</module>
         <!-- Ajoute les autres microservices ici -->
     </modules>
 
@@ -60,6 +61,11 @@
             <artifactId>spring-boot-starter</artifactId>
             <version>3.4.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
 
 
         <dependency>
@@ -160,7 +166,7 @@
             <modules>
                 <module>gateway</module>
                 <module>authenticationService</module>
-                <module>paiementService</module>
+                <module>paymentService</module>
             </modules>
         </profile>
 

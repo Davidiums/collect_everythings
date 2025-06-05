@@ -1,10 +1,10 @@
-package davidius.paiementservice;
+package paiementService.src.test.java.davidius.paymentService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PaiementServiceApplicationTests {
+class PaymentServiceApplicationTests {
 
     @Test
     void contextLoads() {
