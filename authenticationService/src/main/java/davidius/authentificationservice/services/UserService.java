@@ -29,6 +29,9 @@ public class UserService {
     public boolean validatePassword(String rawPassword, String encodedPassword) {
         return new BCryptPasswordEncoder().matches(rawPassword, encodedPassword);
     }
+    public User getUserById( Long userId) {
+        return userRepository.findById(userId).orElse(null);
+    }
 
 
 }

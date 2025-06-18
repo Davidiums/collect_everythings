@@ -3,6 +3,8 @@ package davidius.authentificationservice.security;
 import davidius.authentificationservice.entities.User;
 import davidius.authentificationservice.repositories.UserRepository;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -26,6 +28,7 @@ import java.util.Optional;
 public class JwtUtils {
 
         private final UserRepository userRepository;
+        @Getter
         private final PrivateKey privateKey;
         private final PublicKey publicKey; // Ajoute la clé publique ici
         private final long jwtExpirationInMs = 3600000; // 1 heure
@@ -91,4 +94,5 @@ public class JwtUtils {
             Optional<User> user = userRepository.findByUsername(username);
             return user.map(User::getId).orElse(-1L);
         }
-    }
+
+}

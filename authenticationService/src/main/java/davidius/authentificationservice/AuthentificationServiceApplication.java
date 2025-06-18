@@ -8,8 +8,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.util.TimeZone;
 
-@SpringBootApplication
-public class AuthentificationServiceApplication extends SpringBootServletInitializer {
+@SpringBootApplication(scanBasePackages = {
+        "davidius.authentificationservice",
+        "com.davidius.shared"
+})public class AuthentificationServiceApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(AuthentificationServiceApplication.class, args);

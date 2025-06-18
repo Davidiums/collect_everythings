@@ -29,9 +29,10 @@ public class CorsGlobalConfiguration {
             if (CorsUtils.isCorsRequest(request)) {
                 ServerHttpResponse response = exchange.getResponse();
                 HttpHeaders headers = response.getHeaders();
-                headers.set("Access-Control-Allow-Origin", "*");
+                headers.set("Access-Control-Allow-Origin", "http://localhost:4200");
                 headers.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
                 headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+                headers.set("Access-Control-Allow-Credentials", "true");
                 if (request.getMethod() == HttpMethod.OPTIONS) {
                     response.setStatusCode(HttpStatus.OK);
                     return Mono.empty();

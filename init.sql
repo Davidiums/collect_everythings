@@ -4,6 +4,7 @@ CREATE DATABASE IF NOT EXISTS paiement_db;
 CREATE DATABASE IF NOT EXISTS subscription_db;
 CREATE DATABASE IF NOT EXISTS item_db;
 CREATE DATABASE IF NOT EXISTS basket_db;
+CREATE DATABASE IF NOT EXISTS orchestrator_db;
 
 
 CREATE USER IF NOT EXISTS 'auth_user'@'%' IDENTIFIED BY 'auth_password';
@@ -23,5 +24,8 @@ GRANT ALL PRIVILEGES ON item_db.* TO 'item_user'@'%';
 
 CREATE USER IF NOT EXISTS 'basket_user'@'%' IDENTIFIED BY 'basket_password';
 GRANT ALL PRIVILEGES ON basket_db.* TO 'basket_user'@'%';
+
+CREATE USER IF NOT EXISTS 'orchestrator_user'@'%' IDENTIFIED BY 'orchestrator_password';
+GRANT ALL PRIVILEGES ON orchestrator_db.* TO 'orchestrator_user'@'%';
 
 FLUSH PRIVILEGES;

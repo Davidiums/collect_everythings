@@ -23,6 +23,7 @@
         <option value="$PROJECT_DIR$/itemService/pom.xml" />
         <option value="$PROJECT_DIR$/basketService/pom.xml" />
         <option value="$PROJECT_DIR$/shared/pom.xml" />
+        <option value="$PROJECT_DIR$/orchestratorService/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -24,6 +24,7 @@ public class PlanControler {
     public List<Plan> getPlans() {
         System.out.println("youpi une requete");
         System.out.println("Requête reçue par l'utilisateur : " + UserContext.get().getMail() + " (id=" + UserContext.get().getId() + ")");
+
         return this.planRepository.findAll();
     }
 

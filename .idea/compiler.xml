@@ -17,6 +17,7 @@
         <module name="paymentService" />
         <module name="subscriptionService" />
         <module name="gateway" />
+        <module name="orchestratorService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -36,6 +37,7 @@
       <module name="common-rabbitmq-config" options="-parameters" />
       <module name="gateway" options="" />
       <module name="itemService" options="" />
+      <module name="orchestratorService" options="" />
       <module name="paymentService" options="" />
       <module name="subscriptionService" options="" />
       <module name="test" options="-parameters" />
